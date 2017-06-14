@@ -28,8 +28,8 @@ function [scoring, y]=findnoise(varargin)
 %
 % When using this code, please cite:
 % "S. Mariani, A. F. T. Borges, T. Henriques, A. L. Goldberger, 
-% M. D. Costa. ìUse of Multiscale Entropy to Facilitate Artifact Detection 
-% in Electroencephalographic Signalsî, Engineering in Medicine and Biology 
+% M. D. Costa. ‚ÄúUse of Multiscale Entropy to Facilitate Artifact Detection 
+% in Electroencephalographic Signals‚Äù, Engineering in Medicine and Biology 
 % Society (EMBC), 37th Annual International Conference of the IEEE, 
 % Milan, Italy, 2015."
 %
@@ -59,7 +59,7 @@ if epoch*fs<3750
         num2str(epoch*fs), ' samples long'])
 end
 n=length(signal); %in samples
-scoring=zeros(floor(n/fs/epoch/(1-overlap/100)),1);
+scoring=zeros(floor(n/fs/epoch/(1-overlap/100))-1,1);
 y=zeros(size(scoring));
 shift=round(epoch*(1-overlap/100)*fs); %shift in samples
         h = waitbar(0,'Please wait...');
